@@ -33,11 +33,11 @@ This infrastructure enhances availability, security, and observability of the we
 ```mermaid
 graph TD
     A[User] -->|HTTPS Request| B[DNS: www.foobar.com]
-    B --> C[Firewall 1 (Load Balancer Layer)]
-    C --> D[HAProxy Load Balancer (SSL Termination)]
+    B --> C[Firewall 1 - Load Balancer Layer]
+    C --> D[HAProxy Load Balancer - SSL Termination]
 
-    D -->|Decrypted HTTP| E[Firewall 2 (App Server 1)]
-    D -->|Decrypted HTTP| F[Firewall 3 (App Server 2)]
+    D -->|Decrypted HTTP| E[Firewall 2 - App Server 1]
+    D -->|Decrypted HTTP| F[Firewall 3 - App Server 2]
 
     E --> E1[Nginx Web Server]
     E1 --> E2[App Server]
@@ -50,4 +50,4 @@ graph TD
     F2 --> F4[MySQL Replica DB]
 
     E & F --> G[Monitoring Clients]
-    G --> H[Monitoring Service (e.g., Sumo Logic)]
+    G --> H[Monitoring Service - Sumo Logic]
